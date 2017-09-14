@@ -1,0 +1,7 @@
+34	        if remote_name is None:
+35	            remote_name = b'/flash/' + local_name
+36	        self.monitor.write_file(remote_name, content)
+37	
+38	    def do_sync(self):
+39	        # delete unused files
+40	        map(self.monitor.remove_file, filter_by_type(self.to_delete(), b'f'))
